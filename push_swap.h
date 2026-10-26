@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/26 16:44:54 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/10/26 18:10:03 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include <unistd.h>
+
+# define B "bench"
+# define S "simple"
+# define M "medium"
+# define C "complex"
+# define A "adaptive"
 
 typedef struct s_selector
 {
