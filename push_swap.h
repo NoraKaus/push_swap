@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/26 16:30:51 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/10/26 16:44:54 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef	s_selector
+typedef struct s_selector
 {
-	int	
-}
+	int	bench;
+	int	simple;
+	int	medium;
+	int	complex;
+	int	adaptive;
+}	t_selector;
 
 #endif
