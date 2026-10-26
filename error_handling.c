@@ -14,32 +14,56 @@
 
 int	error_handling(int argc, char **argv)
 {
+	t_selector	select;
 	ssize_t		i;
-	ssize_t		j;
-	t_selector	*select;
-	char		**compare;
-	char		**values;
-	if (argc < 2)
-	{
-		ft_printf("Error\n");
-		exit (EXIT_FAILURE);
-	}
-	i = 0;
-	compare = {"--simple", "--medium", "--complex", "--adaptive" };
-	
-	memset(&select, 0, sizeof(t_selector));
-	if (strncmp(argv[i], "--bench", ft_strlen(argv[i])) == 0)
-	{
-		select->bench = 1;
-		i++;
-	}
-	j = 0;
-	while (compare[j])
-	{
-		if (strncmp(argv[i], compare[j], ft_strlen(argv[i])) == 0)
-		{
-			
-		}
-	}
 
+	if (argc < 2)
+		exit (EXIT_FAILURE);
+	i = 1;
+	init_select(&select);
+	chk_strategy(argv, &select, &i);
+
+}
+
+void init_select(t_selector *select)
+{
+	select->bench = 0;
+	select->strategy = 0;
+}
+
+void chk_strategy(char **argv, t_selector *select, ssize_t *i)
+{
+	ssize_t is_match;
+
+	while (argv[*i])
+	{
+		is_match = find_match(argv[*i], select);
+		if (is_match > 0 && !select->strategy)
+		{
+			select->strategy = is_match;
+			(*i)++;
+		}
+		else if (ft_strncmp(argv[*i], "--bench", 8) == 0 && !select->bench)
+		{
+			select->bench = 1;
+			(*i)++;
+		}
+		else
+			break;
+	}
+	if (!select->strategy)
+		select->strategy = ADAPTIVE;
+}	
+
+ssize_t find_match(char *argv, t_selector *select)
+{
+	if (ft_strncmp(argv, "--simple", 9) == 0)
+		return (SIMPLE);
+	if (ft_strncmp(argv, "--medium", 9) == 0)
+		return (MEDIUM);
+	if (ft_strncmp(argv, "--complex", 10) == 0)
+		return (COMPLEX);
+	if (ft_strncmp(argv, "--adaptive", 11) == 0)
+		return (ADAPTIVE);
+	return (0);
 }

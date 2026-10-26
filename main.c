@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	err = error_handling(argc, argv);
 	if (err < 1)
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 7);
 		exit(EXIT_FAILURE);
 	}
 }

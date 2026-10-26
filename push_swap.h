@@ -15,19 +15,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define B "bench"
-# define S "simple"
-# define M "medium"
-# define C "complex"
-# define A "adaptive"
+enum strategy{
+	NONE, SIMPLE, MEDIUM, COMPLEX, ADAPTIVE
+};
 
 typedef struct s_selector
 {
 	int	bench;
-	int	simple;
-	int	medium;
-	int	complex;
-	int	adaptive;
+	int	strategy;
 }	t_selector;
+
 
 #endif
