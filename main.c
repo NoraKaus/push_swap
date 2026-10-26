@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:20:49 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/26 15:22:58 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/10/26 15:45:56 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,8 @@ int	main(int argc, char **argv)
 
 	err = error_handling(argc, argv);
 	if (err < 1)
+	{
+		ft_printf("Error\n");
 		exit(EXIT_FAILURE);
+	}
 }
