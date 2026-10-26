@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:41:55 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/26 16:03:42 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/10/26 16:30:15 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	error_handling(int argc, char **argv)
 	i = 0;
 	if (strncmp(argv[i], "--bench", ft_strlen(argv[i])) == 0)
 		select->bench = 1;
-	
+
 }
 
 void init_struct()

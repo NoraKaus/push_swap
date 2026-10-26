@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/26 16:16:44 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/10/26 16:30:51 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-struct push_swap
+typedef	s_selector
 {
-	/* data */
-};
+	int	
+}
 
 #endif
