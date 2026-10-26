@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:41:55 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/26 17:28:24 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/10/26 17:32:26 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	error_handling(int argc, char **argv)
 		exit (EXIT_FAILURE);
 	}
 	i = 0;
-	memset(&select, 0, sizeof(t_selector));
+	memset(select, 0, sizeof(t_selector));
 	if (strncmp(argv[i], "--bench", ft_strlen(argv[i])) == 0)
 	{
 		select->bench = 1;
