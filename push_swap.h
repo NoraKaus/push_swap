@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/26 15:21:22 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/10/26 16:02:08 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include <unistd.h>
+
+int check_dup(int *array, int len);
 
 #endif
