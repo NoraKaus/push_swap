@@ -22,4 +22,6 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 7);
 		exit(EXIT_FAILURE);
 	}
+	write(2, "Success\n", 9);
+	exit(EXIT_SUCCESS);
 }

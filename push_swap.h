@@ -25,5 +25,7 @@ typedef struct s_selector
 	int	strategy;
 }	t_selector;
 
+int	error_handling(int argc, char **argv);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

@@ -12,32 +12,43 @@
 
 #include "push_swap.h"
 
+static void init_select(t_selector *select);
+static void chk_strategy(char **argv, t_selector *select, ssize_t *i);
+static ssize_t find_match(char *argv);
+static ssize_t	chk_input(int argc, char **argv, ssize_t i);
+static int	ft_isdigit(int c);
+
 int	error_handling(int argc, char **argv)
 {
 	t_selector	select;
 	ssize_t		i;
+	ssize_t		valid;
 
 	if (argc < 2)
 		exit (EXIT_FAILURE);
 	i = 1;
 	init_select(&select);
 	chk_strategy(argv, &select, &i);
-
+	if (i <= argc)
+		valid = chk_input(argc, argv, i);
+	if (!valid)
+		return (0);
+	return (1);
 }
 
-void init_select(t_selector *select)
+static void init_select(t_selector *select)
 {
 	select->bench = 0;
 	select->strategy = 0;
 }
 
-void chk_strategy(char **argv, t_selector *select, ssize_t *i)
+static void chk_strategy(char **argv, t_selector *select, ssize_t *i)
 {
 	ssize_t is_match;
 
 	while (argv[*i])
 	{
-		is_match = find_match(argv[*i], select);
+		is_match = find_match(argv[*i]);
 		if (is_match > 0 && !select->strategy)
 		{
 			select->strategy = is_match;
@@ -55,7 +66,7 @@ void chk_strategy(char **argv, t_selector *select, ssize_t *i)
 		select->strategy = ADAPTIVE;
 }	
 
-ssize_t find_match(char *argv, t_selector *select)
+static ssize_t find_match(char *argv)
 {
 	if (ft_strncmp(argv, "--simple", 9) == 0)
 		return (SIMPLE);
@@ -66,4 +77,36 @@ ssize_t find_match(char *argv, t_selector *select)
 	if (ft_strncmp(argv, "--adaptive", 11) == 0)
 		return (ADAPTIVE);
 	return (0);
+}
+
+static ssize_t	chk_input(int argc, char **argv, ssize_t i)
+{
+	ssize_t k;
+
+	k = 0;
+	if (i + 1 == argc)
+	{
+		while(argv[i][k])
+		{
+			if (!ft_isdigit(argv[i][k]) && argv[i][k] != ' ')
+				return (0);
+			k++;
+		}
+	}
+	else
+	{
+		while(argv[i])
+		{
+			if (argv[i][0] == '-')
+				k++;
+			while (argv[i][k])
+			{
+			 	if (!ft_isdigit(argv[i][k]))
+					return(0);
+				k++;
+			}
+			i++;
+		}
+	}
+	return (1);
 }
