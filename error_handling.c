@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-static void init_select(t_selector *select);
-static void chk_strategy(char **argv, t_selector *select, ssize_t *i);
-static ssize_t find_match(char *argv);
-static ssize_t	chk_input(int argc, char **argv, ssize_t i);
-static int	ft_isdigit(int c);
+static void		init_select(t_selector *select);
+static void		chk_strategy(char **argv, t_selector *select, ssize_t *i);
+static ssize_t	find_match(char *argv);
+static ssize_t	single_input(char **argv, ssize_t i);
+static ssize_t	multi_input(char **argv, ssize_t i);
 
 int	error_handling(int argc, char **argv)
 {
@@ -29,8 +29,10 @@ int	error_handling(int argc, char **argv)
 	i = 1;
 	init_select(&select);
 	chk_strategy(argv, &select, &i);
-	if (i < argc)
-		valid = chk_input(argc, argv, i);
+	if (i + 1 == argc)
+		valid = single_input(argv, i);
+	else 
+		valid = multi_input(argv, i);
 	if (!valid)
 		return (0);
 	return (1);
@@ -79,52 +81,45 @@ static ssize_t find_match(char *argv)
 	return (0);
 }
 
-static ssize_t	chk_input(int argc, char **argv, ssize_t i)
+static ssize_t	single_input(char **argv, ssize_t i)
 {
 	ssize_t k;
 
 	k = 0;
-	if (i + 1 == argc)
+
+	while(argv[i][k])
 	{
-		while(argv[i][k])
-		{
-			if (argv[i][k] != '-' && !ft_isdigit(argv[i][k]))
-				return (0);
-			while (ft_isdigit(argv[i][k]) && argv[i][k] != '\0')
-				k++;
-			if (argv[i][k] == '\0')
-				break ;
-			if (argv[i][k] != ' ')
-				return (0);
+		if (argv[i][k] == '-' && !ft_isdigit(argv[i][k + 1]))
+			return (0);
+		if (argv[i][k] == '-')
 			k++;
-		}
-	}
-	else
-	{
-		while(argv[i])
-		{
-			if (argv[i][0] == '-')
-				k++;
-			while (argv[i][k])
-			{
-			 	if (!ft_isdigit(argv[i][k]))
-					return(0);
-				k++;
-			}
-			i++;
-		}
+		while (ft_isdigit(argv[i][k]) && argv[i][k] != '\0')
+			k++;
+		if (argv[i][k] == '\0')
+			break ;
+		if (argv[i][k] != ' ')
+			return (0);
+		k++;
 	}
 	return (1);
 }
 
-static int	ft_isdigit(int c)
+static ssize_t	multi_input(char **argv, ssize_t i)
 {
-	if (c >= '0' && c <= '9')
+	ssize_t k;
+
+	k = 0;
+	while(argv[i])
 	{
-		return (1);
+		if (argv[i][0] == '-')
+			k++;
+		while (argv[i][k])
+		{
+			if (!ft_isdigit(argv[i][k]))
+				return(0);
+			k++;
+		}
+		i++;
 	}
-	else
-	{
-		return (0);
-	}
+	return (1);
 }
