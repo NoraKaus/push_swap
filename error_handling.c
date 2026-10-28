@@ -29,7 +29,7 @@ int	error_handling(int argc, char **argv)
 	i = 1;
 	init_select(&select);
 	chk_strategy(argv, &select, &i);
-	if (i <= argc)
+	if (i < argc)
 		valid = chk_input(argc, argv, i);
 	if (!valid)
 		return (0);
@@ -88,7 +88,13 @@ static ssize_t	chk_input(int argc, char **argv, ssize_t i)
 	{
 		while(argv[i][k])
 		{
-			if (!ft_isdigit(argv[i][k]) && argv[i][k] != ' ')
+			if (argv[i][k] != '-' && !ft_isdigit(argv[i][k]))
+				return (0);
+			while (ft_isdigit(argv[i][k]) && argv[i][k] != '\0')
+				k++;
+			if (argv[i][k] == '\0')
+				break ;
+			if (argv[i][k] != ' ')
 				return (0);
 			k++;
 		}
@@ -109,4 +115,16 @@ static ssize_t	chk_input(int argc, char **argv, ssize_t i)
 		}
 	}
 	return (1);
+}
+
+static int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
