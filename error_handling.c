@@ -6,13 +6,12 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:41:55 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/26 18:10:52 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/10/28 18:56:01 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void		init_select(t_selector *select);
 static void		chk_strategy(char **argv, t_selector *select, ssize_t *i);
 static ssize_t	find_match(char *argv);
 static ssize_t	single_input(char **argv, ssize_t i);
@@ -31,22 +30,16 @@ int	error_handling(int argc, char **argv)
 	chk_strategy(argv, &select, &i);
 	if (i + 1 == argc)
 		valid = single_input(argv, i);
-	else 
+	else
 		valid = multi_input(argv, i);
 	if (!valid)
 		return (0);
 	return (1);
 }
 
-static void init_select(t_selector *select)
+static void	chk_strategy(char **argv, t_selector *select, ssize_t *i)
 {
-	select->bench = 0;
-	select->strategy = 0;
-}
-
-static void chk_strategy(char **argv, t_selector *select, ssize_t *i)
-{
-	ssize_t is_match;
+	ssize_t	is_match;
 
 	while (argv[*i])
 	{
@@ -62,13 +55,13 @@ static void chk_strategy(char **argv, t_selector *select, ssize_t *i)
 			(*i)++;
 		}
 		else
-			break;
+			break ;
 	}
 	if (!select->strategy)
 		select->strategy = ADAPTIVE;
-}	
+}
 
-static ssize_t find_match(char *argv)
+static ssize_t	find_match(char *argv)
 {
 	if (ft_strncmp(argv, "--simple", 9) == 0)
 		return (SIMPLE);
@@ -83,11 +76,10 @@ static ssize_t find_match(char *argv)
 
 static ssize_t	single_input(char **argv, ssize_t i)
 {
-	ssize_t k;
+	ssize_t	k;
 
 	k = 0;
-
-	while(argv[i][k])
+	while (argv[i][k])
 	{
 		if (argv[i][k] == '-' && !ft_isdigit(argv[i][k + 1]))
 			return (0);
@@ -106,17 +98,17 @@ static ssize_t	single_input(char **argv, ssize_t i)
 
 static ssize_t	multi_input(char **argv, ssize_t i)
 {
-	ssize_t k;
+	ssize_t	k;
 
 	k = 0;
-	while(argv[i])
+	while (argv[i])
 	{
 		if (argv[i][0] == '-')
 			k++;
 		while (argv[i][k])
 		{
 			if (!ft_isdigit(argv[i][k]))
-				return(0);
+				return (0);
 			k++;
 		}
 		i++;
