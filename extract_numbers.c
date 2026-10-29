@@ -12,3 +12,10 @@
 
 #include "push_swap.h"
 
+ssize_t build_arr(int argc, char **argv, ssize_t i)
+{
+    int *input;
+
+    input = malloc((argc - i) * sizeof(int));
+    
+}
