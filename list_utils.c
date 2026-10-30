@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 11:53:53 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/30 17:29:00 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/10/30 17:50:40 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

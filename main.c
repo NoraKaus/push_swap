@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:20:49 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/26 15:45:56 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/10/30 17:46:03 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int	main(int argc, char **argv)
 {
-	int	err;
+	int			err;
+	ssize_t		**nbrs;
+	t_selector	select;
 
-	err = error_handling(argc, argv);
+	err = error_handling(argc, argv, &select, nbrs);
 	if (err < 1)
 	{
 		write(2, "Error\n", 7);
