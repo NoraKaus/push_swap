@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 11:53:53 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/30 12:04:09 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/10/30 17:45:04 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_int_lstsize(t_int_list *lst)
 {
-	int		count;
+	int			count;
 	t_int_list	*current;
 
 	if (lst == 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/08 11:36:06 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/08 13:26:26 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/10/30 17:04:13 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

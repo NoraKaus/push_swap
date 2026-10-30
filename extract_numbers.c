@@ -6,16 +6,28 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 18:55:30 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/28 18:55:43 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/10/30 17:39:50 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-ssize_t build_arr(int argc, char **argv, ssize_t i)
+int	build_arr(char **nums, ssize_t len, ssize_t **nbrs)
 {
-    int *input;
+	ssize_t	i;
 
-    input = malloc((argc - i) * sizeof(int));
-    
+	*nbrs = malloc(len * sizeof(int));
+	if (!nbrs)
+		return (0);
+	i = 0;
+	while (nums[i])
+	{
+		nbrs[i] = atoi_lng(nums[i]);
+		if (!&nbrs[i])
+			return (0);
+		if (nbrs[i] < INT_MIN || nbrs[i] > INT_MAX)
+			return (0);
+		i++;
+	}
+	return (1);
 }
