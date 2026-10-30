@@ -6,7 +6,7 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:30:49 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/26 16:02:19 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/10/26 18:21:17 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ int check_dup(int *array, int len)
 	}
 	return (1);
 }
+
 
