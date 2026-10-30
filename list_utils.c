@@ -6,7 +6,7 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 11:53:53 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/30 13:25:56 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/10/30 17:29:00 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_int_lstsize(t_int_list *lst)
 {
-	int		count;
+	int			count;
 	t_int_list	*current;
 
 	if (lst == 0)

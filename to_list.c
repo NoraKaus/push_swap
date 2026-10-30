@@ -6,7 +6,7 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 16:07:47 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/30 17:27:27 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/10/30 17:30:08 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	find_rank(int *array, int len, int n)
 // returns 0 if failure to malloc, 1 if all good
 int	build_stack(int *array, int len, t_int_list **start)
 {
-	int	i;
+	int			i;
 	t_int_list	*new;
 
 	i = 0;
@@ -49,7 +49,7 @@ int	build_stack(int *array, int len, t_int_list **start)
 	return (1);
 }
 
-void ft_int_lstclear(t_int_list **start)
+void	ft_int_lstclear(t_int_list **start)
 {
 	t_list	*current;
 	t_list	*next_one;
