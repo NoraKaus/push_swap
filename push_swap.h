@@ -6,7 +6,7 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/30 10:49:48 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/10/30 11:54:20 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ enum	e_strategy
 	COMPLEX,
 	ADAPTIVE
 };
+
+typedef struct s_int_list
+{
+	int content;
+	int rank;
+	struct s_int_list *next;
+}	t_int_list;
 
 typedef struct s_selector
 {
