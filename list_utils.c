@@ -6,7 +6,7 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 11:53:53 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/30 13:20:48 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/10/30 13:25:56 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,20 @@ t_int_list	*ft_int_lstnew(int content, int rank)
 	new->rank = rank;
 	new->next = 0;
 	return (new);
+}
+
+t_int_list	*ft_int_lstlast(t_int_list *lst)
+{
+	t_int_list	*current;
+
+	current = lst;
+	if (current == 0)
+		return (0);
+	while (current->next != 0)
+	{
+		current = current->next;
+	}
+	return (current);
 }
 
 void	ft_int_lstadd_front(t_int_list **lst, t_int_list *new)

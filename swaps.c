@@ -6,7 +6,7 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 10:39:56 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/30 12:30:40 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/10/30 13:24:30 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	swap(t_int_list **stack)
 {
 	t_int_list	*temp;
 
-	if (ft_lstsize(*stack) < 2)
+	if (ft_int_lstsize(*stack) < 2)
 		return ;
 	temp = *stack;
 	*stack = (*stack)->next;
