@@ -6,7 +6,7 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 11:53:53 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/30 13:01:00 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/10/30 13:20:48 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_int_lstsize(t_int_list *lst)
 	return (count);
 }
 
-t_int_list	*ft_int_lstnew(int content)
+t_int_list	*ft_int_lstnew(int content, int rank)
 {
 	t_int_list	*new;
 
@@ -37,6 +37,7 @@ t_int_list	*ft_int_lstnew(int content)
 	if (new == 0)
 		return (0);
 	new->content = content;
+	new->rank = rank;
 	new->next = 0;
 	return (new);
 }
