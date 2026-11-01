@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   to_list.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 16:07:47 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/30 17:30:08 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/01 20:23:07 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int	build_stack(int *array, int len, t_int_list **start)
 
 void	ft_int_lstclear(t_int_list **start)
 {
-	t_list	*current;
-	t_list	*next_one;
+	t_int_list	*current;
+	t_int_list	*next_one;
 
 	if (start == 0 || *start == 0)
 		return ;
@@ -60,7 +60,7 @@ void	ft_int_lstclear(t_int_list **start)
 	next_one = current->next;
 	while (next_one != 0)
 	{
-		free(current)
+		free(current);
 		current = next_one;
 		next_one = current->next;
 	}

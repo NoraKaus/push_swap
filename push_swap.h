@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/30 17:50:28 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/01 20:37:45 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <limits.h>
 # include "printf/ft_printf.h"
 # include "printf/libft/libft.h"
+
 // give startegies values from 1 to 4
 enum	e_strategy
 {
@@ -34,17 +35,25 @@ typedef struct s_int_list
 	struct s_int_list	*next;
 }						t_int_list;
 
-// holds the strategy for algorithms
-typedef struct s_selector
+// holds the strategy for algorithms and int array
+typedef struct s_input
 {
 	int	bench;
 	int	strategy;
-}	t_selector;
+	int	len;
+	int	*array;
+}	t_input;
 
-void	init_select(t_selector *select);
-ssize_t	input_len(char **str);
-ssize_t	atoi_lng(const char *nptr);
-int		build_arr(char **nums, ssize_t len, ssize_t **nbrs);
-int		error_handling(int argc, char **argv, t_selector *select, int **nbrs);
+void		init_select(t_input *select);
+long		atoi_lng(const char *nptr, int *k);
+int			build_arr(char **argv, t_input *input, int i);
+int			error_handling(int argc, char **argv, t_input *input);
+int			check_dup(int *array, int len);
+float		calc_disorder(int *array, int len);
+int			ft_int_lstsize(t_int_list *lst);
+t_int_list	*ft_int_lstnew(int content, int rank);
+t_int_list	*ft_int_lstlast(t_int_list *lst);
+void		ft_int_lstadd_front(t_int_list **lst, t_int_list *new);
+void		ft_int_lstadd_back(t_int_list **lst, t_int_list *new);
 
 #endif

@@ -6,93 +6,85 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:41:55 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/30 17:44:43 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/01 20:33:53 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void		chk_strategy(char **argv, t_selector *select, ssize_t *i);
-static ssize_t	find_match(char *argv);
-static ssize_t	validate(char **argv, ssize_t i);
-static ssize_t	chk_conv(int argc, char **argv, int i, char	**nums);
+static void	chk_strategy(char **argv, t_input *input, int *i);
+static int	find_match(char *argv);
+static int	validate(char **argv, int i);
+static int	chk_conv(int argc, char **argv, int i);
 
-// inits the select struct, inputs values for strategy,
+// inits the*input struct, inputs values for strategy,
 // inputs and builds array
-int	error_handling(int argc, char **argv, t_selector *select, int **nbrs)
+int	error_handling(int argc, char **argv, t_input *input)
 {
-	ssize_t		i;
-	ssize_t		vld_len;
-	int			chk;
-	char		**nums;
+	int	i;
+	int	chk;
 
-	if (argc < 2)
-		exit (EXIT_FAILURE);
 	i = 1;
-	init_select(select);
-	chk_strategy(argv, select, &i);
-	vld_len = chck_conv(argc, argv, i);
-	if (!vld_len)
+	chk_strategy(argv, input, &i);
+	if (i == argc)
+		exit (EXIT_FAILURE);
+	input->len = chk_conv(argc, argv, i);
+	if (input->len == 0)
 		return (0);
-	chk = build_arr(nums, vld_len, nbrs);
+	chk = build_arr(argv, input, i);
+	if (!chk)
+		return (0);
+	chk = check_dup(input->array, input->len);
 	if (!chk)
 		return (0);
 	return (1);
 }
 
-// checks if inp is nums, fills the num array,returns the length of input)
-static ssize_t	chk_conv(int argc, char **argv, int i, char	**nums)
+// checks if inp is nums, returns the length of input)
+static int	chk_conv(int argc, char **argv, int i)
 {
-	ssize_t		valid;
-	ssize_t		ls_len;
+	int	valid;
+	int	total;
 
-	ls_len = argc - i;
+	total = 0;
 	while (i < argc)
 	{
 		valid = validate(argv, i);
 		if (!valid)
 			return (0);
 		i++;
+		total += valid;
 	}
-	if (ls_len == 1)
-	{
-		nums = ft_split(argv[i], ' ');
-		if (!nums)
-			return (0);
-		ls_len = input_len(nums);
-	}
-	else
-		nums = &argv[argc - ls_len];
-	return (ls_len);
+	return (total);
 }
 
 //inputs the strategy and bench if any given
-static void	chk_strategy(char **argv, t_selector *select, ssize_t *i)
+static void	chk_strategy(char **argv, t_input *input, int *i)
 {
-	ssize_t	is_match;
+	int	is_match;
 
 	while (argv[*i])
 	{
 		is_match = find_match(argv[*i]);
-		if (is_match > 0 && !select->strategy)
+		if (is_match > 0 && !input->strategy)
 		{
-			select->strategy = is_match;
+			input->strategy = is_match;
 			(*i)++;
 		}
-		else if (ft_strncmp(argv[*i], "--bench", 8) == 0 && !select->bench)
+		else if (ft_strncmp(argv[*i], "--bench", 8) == 0 && !input->bench)
 		{
-			select->bench = 1;
+			input->bench = 1;
 			(*i)++;
 		}
 		else
 			break ;
 	}
-	if (!select->strategy)
-		select->strategy = ADAPTIVE;
+	if (!input->strategy)
+		input->strategy = ADAPTIVE;
 }
 
 //matches the strategy selector and adjusts the flag
-static ssize_t	find_match(char *argv)
+static int	find_match(char *argv)
 {
 	if (ft_strncmp(argv, "--simple", 9) == 0)
 		return (SIMPLE);
@@ -106,30 +98,28 @@ static ssize_t	find_match(char *argv)
 }
 
 //checks if input is numbers, ' ' and '-' '+' only
-static ssize_t	validate(char **argv, ssize_t i)
+static int	validate(char **argv, int i)
 {
-	ssize_t	k;
+	int	k;
+	int	count;
 
 	k = 0;
-	if (argv[i][0] == '\0')
-		return (0);
+	count = 0;
 	while (argv[i][k])
 	{
-		if ((argv[i][k] == '-' || argv[i][k] == '+')
-			&& !ft_isdigit(argv[i][k + 1]))
-			return (0);
+		while (argv[i][k] == ' ')
+			k++;
+		if (argv[i][k] == '\0')
+			return (count);
 		if (argv[i][k] == '-' || argv[i][k] == '+')
 			k++;
 		if (!ft_isdigit(argv[i][k]))
 			return (0);
-		while (ft_isdigit(argv[i][k]) && argv[i][k] != '\0')
+		while (ft_isdigit(argv[i][k]))
 			k++;
-		if (argv[i][k] == '\0')
-			break ;
-		if (argv[i][k] != ' ')
+		count++;
+		if (argv[i][k] != ' ' && argv[i][k] != '\0')
 			return (0);
-		while (argv[i][k] == ' ')
-			k++;
 	}
-	return (1);
+	return (count);
 }

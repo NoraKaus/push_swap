@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotates.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 13:21:39 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/30 17:29:45 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/01 20:14:50 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,18 @@ void	rev_rotate(t_int_list **stack)
 void	rra(t_int_list **stack)
 {
 	rev_rotate(stack);
-	write(1, "rra\n", 3);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_int_list **stack)
 {
 	rev_rotate(stack);
-	write(1, "rrb\n", 3);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_int_list **stack_a, t_int_list **stack_b)
 {
 	rev_rotate(stack_a);
 	rev_rotate(stack_b);
-	write(1, "rra\n", 3);
+	write(1, "rrr\n", 4);
 }

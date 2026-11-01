@@ -6,52 +6,43 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 18:50:06 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/10/30 17:40:14 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/01 19:39:48 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //initialise the selector struct
-void	init_select(t_selector *select)
+void	init_select(t_input *input)
 {
-	select->bench = 0;
-	select->strategy = 0;
-}
-
-//calculate the number of entries in the input
-ssize_t	input_len(char **str)
-{
-	ssize_t	count;
-
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
+	input->bench = 0;
+	input->strategy = 0;
+	input->len = 0;
+	input->array = NULL;
 }
 
 //convert string to number (return long for INT_MIN & INT_MAX lengths)
-ssize_t	atoi_lng(const char *nptr)
+long	atoi_lng(const char *nptr, int *k)
 {
-	int		i;
-	ssize_t	n;
+	long	n;
 	int		sign;
 
-	i = 0;
 	sign = 1;
 	n = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= '\f' && nptr[i] <= '\r'))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (nptr[*k] == ' ' || (nptr[*k] >= '\f' && nptr[*k] <= '\r'))
+		(*k)++;
+	if (nptr[*k] == '-' || nptr[*k] == '+')
 	{
-		if (nptr[i] == '-')
+		if (nptr[*k] == '-')
 			sign = -1;
-		i++;
+		(*k)++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	while (nptr[*k] >= '0' && nptr[*k] <= '9')
 	{
-		n = (n * 10) + (nptr[i] - '0');
-		i++;
+		n = (n * 10) + (nptr[*k] - '0');
+		if (n > 2147483648)
+			return (n);
+		(*k)++;
 	}
 	return (n * sign);
 }
