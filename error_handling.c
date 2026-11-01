@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:41:55 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/01 20:33:53 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/01 20:47:56 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	error_handling(int argc, char **argv, t_input *input)
 	i = 1;
 	chk_strategy(argv, input, &i);
 	if (i == argc)
-		exit (EXIT_FAILURE);
+		return (-1);
 	input->len = chk_conv(argc, argv, i);
 	if (input->len == 0)
 		return (0);

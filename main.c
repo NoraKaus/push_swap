@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:20:49 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/01 20:23:40 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/01 20:53:46 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 int	main(int argc, char **argv)
 {
 	int			err;
-	int			i;
 	t_input		input;
 
 	init_select(&input);
 	err = error_handling(argc, argv, &input);
-	if (err < 1)
+	if (err == -1)
+		exit(EXIT_FAILURE);
+	if (err == 0)
 	{
 		write(2, "Error\n", 6);
 		free (input.array);
 		exit(EXIT_FAILURE);
 	}
-	i = 0;
-	while (i < input.len)
+	if (calc_disorder(input.array, input.len) == 0)
 	{
-		ft_printf("%d ", input.array[i]);
-		i++;
+		free (input.array);
+		exit(EXIT_SUCCESS);
 	}
 	free (input.array);
 	write(1, "\nSuccess\n", 9);
