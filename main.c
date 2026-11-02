@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:20:49 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 17:44:39 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/02 17:45:58 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ int	main(int argc, char **argv)
 		free (input.array);
 		exit(EXIT_FAILURE);
 	}
-	// // implement algorithm depending on flag
-	// complex(&env, &ops);
-	// while (env.st_a)
-	// {
-	// 	printf("%d ", env.st_a->content);
-	// 	env.st_a = env.st_a->next;
-	// }
-	// printf("\n%d\n", ops.total);
+	// implement algorithm depending on flag
+	complex(&env, &ops);
+	while (env.st_a)
+	{
+		printf("%d ", env.st_a->content);
+		env.st_a = env.st_a->next;
+	}
+	printf("\n%d\n", ops.total);
 	ft_int_lstclear(&(env.st_a));
 	free (input.array);
 	exit(EXIT_SUCCESS);
