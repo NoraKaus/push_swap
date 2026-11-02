@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushes.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 12:29:58 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/02 11:03:50 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/02 12:32:26 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

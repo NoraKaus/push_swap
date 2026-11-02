@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 11:47:21 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/02 13:14:52 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,12 @@ typedef struct s_ops
 	int	rrb;
 	int	rrr;
 }	t_ops;
+
+typedef struct s_env
+{
+	struct s_int_list	*st_a;
+	struct s_int_list	*st_b;
+}	t_env;
 
 void		init_select(t_input *select);
 long		atoi_lng(const char *nptr, int *k);

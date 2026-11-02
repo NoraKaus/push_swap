@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:20:49 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 11:04:10 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/02 13:18:10 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	main(int argc, char **argv)
 	int			err;
 	t_input		input;
 	t_ops		ops;
+	t_env		env;
 
-	init_select(&input);
-	init_ops(&ops);
+	init_structs(&input, &ops, &env);
 	err = error_handling(argc, argv, &input);
 	if (err == -1)
 		exit(EXIT_FAILURE);
@@ -37,4 +37,11 @@ int	main(int argc, char **argv)
 	}
 	free (input.array);
 	exit(EXIT_SUCCESS);
+}
+
+static void	init_structs(t_input *input, t_ops *ops, t_env *env)
+{
+	init_select(&input);
+	init_ops(&ops);
+	init_env(&env);
 }

@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 18:50:06 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 10:59:04 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/02 13:16:00 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ void	init_select(t_input *input)
 	input->len = 0;
 	input->array = NULL;
 	input->disorder = 0.00;
+}
+
+void	init_env(t_env *env)
+{
+	env->st_a = NULL;
+	env->st_b = NULL;
 }
 
 void	init_ops(t_ops *ops)
