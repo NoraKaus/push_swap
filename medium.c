@@ -14,36 +14,31 @@
 #include <stdio.h>
 
 static int	ft_sqrt(long nb);
-static int	find_max(t_int_list *list, int i);
-static void	sort_to_b(t_input *input, t_env *env, t_ops *ops, int *i);
+static int	find_pos(t_int_list *list, int i);
+static void	sort_to_b(t_input *input, t_env *env, t_ops *ops);
 static void	sort_to_a(t_env *env, t_ops *ops, int i);
 
 void	k_sort(t_input *input, t_env *env, t_ops *ops)
 {
-	int	i;
-
-	i = 0;
-	sort_to_b(input, env, ops, &i);
-	sort_to_a(env, ops, i - 1);
+	sort_to_b(input, env, ops);
+	sort_to_a(env, ops, (input->len - 1));
 }
 
-static void	sort_to_b(t_input *input, t_env *env, t_ops *ops, int *i)
+static void	sort_to_b(t_input *input, t_env *env, t_ops *ops)
 {
 	int	k;
+	int i;
 
+	i = 0;
 	k = ft_sqrt(196 * input->len) / 10;
 	while (env->st_a != NULL)
 	{
-		if ((env->st_a->rank) <= *i)
+		if ((env->st_a->rank) <= (k + i))
 		{
 			pb(&(env->st_a), &(env->st_b), ops);
-			rb(&(env->st_b), ops);
-			(*i)++;
-		}
-		else if ((env->st_a->rank) <= (k + (*i)))
-		{
-			pb(&(env->st_a), &(env->st_b), ops);
-			(*i)++;
+			if ((env->st_b->rank) <= i)
+				rb(&(env->st_b), ops);
+			i++;
 		}
 		else
 			ra(&(env->st_a), ops);
@@ -56,7 +51,7 @@ static void	sort_to_a(t_env *env, t_ops *ops, int i)
 
 	while (env->st_b != NULL)
 	{
-		index = find_max(env->st_b, i);
+		index = find_pos(env->st_b, i);
 		if (index == 0)
 		{
 			pa(&(env->st_a), &(env->st_b), ops);
@@ -69,7 +64,7 @@ static void	sort_to_a(t_env *env, t_ops *ops, int i)
 	}
 }
 
-static int	find_max(t_int_list *list, int i)
+static int	find_pos(t_int_list *list, int i)
 {
 	int	count;
 
