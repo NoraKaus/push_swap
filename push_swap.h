@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 09:39:07 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/02 10:56:06 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,28 @@ typedef struct s_int_list
 // holds the strategy for algorithms and int array
 typedef struct s_input
 {
-	int	bench;
-	int	strategy;
-	int	len;
-	int	*array;
+	int		bench;
+	int		strategy;
+	int		len;
+	int		*array;
+	float	disorder;
 }	t_input;
+
+typedef struct s_ops
+{
+	int	total;
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+}	t_ops;
 
 void		init_select(t_input *select);
 long		atoi_lng(const char *nptr, int *k);
