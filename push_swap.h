@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 10:56:06 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/02 11:47:21 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,16 @@ void		ft_int_lstadd_back(t_int_list **lst, t_int_list *new);
 void		ft_int_lstclear(t_int_list **start);
 int			build_stack(int *array, int len, t_int_list **start);
 int			find_rank(int *array, int len, int n);
+void		sa(t_int_list **stack, t_ops *ops);
+void		sb(t_int_list **stack, t_ops *ops);
+void		ss(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops);
+void		pa(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops);
+void		pb(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops);
+void		ra(t_int_list **stack, t_ops *ops);
+void		rb(t_int_list **stack, t_ops *ops);
+void		rr(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops);
+void		rra(t_int_list **stack, t_ops *ops);
+void		rrb(t_int_list **stack, t_ops *ops);
+void		rrr(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops);
 
 #endif
