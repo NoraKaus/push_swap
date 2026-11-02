@@ -6,13 +6,13 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 10:39:56 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/30 13:24:30 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/02 11:02:48 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_int_list **stack)
+static void	swap(t_int_list **stack)
 {
 	t_int_list	*temp;
 
@@ -24,21 +24,27 @@ void	swap(t_int_list **stack)
 	(*stack)->next = temp;
 }
 
-void	sa(t_int_list **stack)
+void	sa(t_int_list **stack, t_ops *ops)
 {
 	swap(stack);
+	(ops->sa)++;
+	(ops->total)++;
 	write(1, "sa\n", 3);
 }
 
-void	sb(t_int_list **stack)
+void	sb(t_int_list **stack, t_ops *ops)
 {
 	swap(stack);
+	(ops->sb)++;
+	(ops->total)++;
 	write(1, "sb\n", 3);
 }
 
-void	ss(t_int_list **stack_a, t_int_list **stack_b)
+void	ss(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops)
 {
 	swap(stack_a);
 	swap(stack_b);
+	(ops->ss)++;
+	(ops->total)++;
 	write(1, "ss\n", 3);
 }
