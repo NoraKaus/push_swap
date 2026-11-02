@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 18:50:06 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/01 19:39:48 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/02 10:59:04 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,23 @@ void	init_select(t_input *input)
 	input->strategy = 0;
 	input->len = 0;
 	input->array = NULL;
+	input->disorder = 0.00;
+}
+
+void	init_ops(t_ops *ops)
+{
+	ops->total = 0;
+	ops->sa = 0;
+	ops->sb = 0;
+	ops->ss = 0;
+	ops->pa = 0;
+	ops->pb = 0;
+	ops->ra = 0;
+	ops->rb = 0;
+	ops->rr = 0;
+	ops->rra = 0;
+	ops->rrb = 0;
+	ops->rrr = 0;
 }
 
 //convert string to number (return long for INT_MIN & INT_MAX lengths)
