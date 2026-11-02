@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:20:49 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 17:45:58 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/02 18:12:53 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 
 static void	init_structs(t_input *input, t_ops *ops, t_env *env);
+static int	handle_err(int argc, char **argv, t_input *input, t_env *env);
 
 int	main(int argc, char **argv)
 {
@@ -21,34 +22,20 @@ int	main(int argc, char **argv)
 	t_input		input;
 	t_ops		ops;
 	t_env		env;
+	t_int_list	*tmp;
 
 	init_structs(&input, &ops, &env);
-	err = error_handling(argc, argv, &input);
-	if (err == -1)
-		exit(EXIT_FAILURE);
+	err = handle_err(argc, argv, &input, &env);
 	if (err == 0)
-	{
-		write(2, "Error\n", 6);
-		free (input.array);
 		exit(EXIT_FAILURE);
-	}
-	input.disorder = calc_disorder(input.array, input.len);
-	if (input.disorder == 0)
-	{
-		free (input.array);
-		exit(EXIT_SUCCESS);
-	}
-	if (build_stack(input.array, input.len, &(env.st_a)) == 0)
-	{
-		free (input.array);
-		exit(EXIT_FAILURE);
-	}
 	// implement algorithm depending on flag
-	complex(&env, &ops);
-	while (env.st_a)
+	simple(&env, &ops);
+	// complex(&env, &ops);
+	tmp = env.st_a;
+	while (tmp)
 	{
-		printf("%d ", env.st_a->content);
-		env.st_a = env.st_a->next;
+		printf("%d ", tmp->content);
+		tmp = tmp->next;
 	}
 	printf("\n%d\n", ops.total);
 	ft_int_lstclear(&(env.st_a));
@@ -61,4 +48,31 @@ static void	init_structs(t_input *input, t_ops *ops, t_env *env)
 	init_select(input);
 	init_ops(ops);
 	init_env(env);
+}
+
+static int	handle_err(int argc, char **argv, t_input *input, t_env *env)
+{
+	int	err;
+
+	err = error_handling(argc, argv, input);
+	if (err == -1)
+		exit(EXIT_FAILURE);
+	if (err == 0)
+	{
+		write(2, "Error\n", 6);
+		free (input->array);
+		exit(EXIT_FAILURE);
+	}
+	input->disorder = calc_disorder(input->array, input->len);
+	if (input->disorder == 0)
+	{
+		free (input->array);
+		exit(EXIT_SUCCESS);
+	}
+	if (build_stack(input->array, input->len, &(env->st_a)) == 0)
+	{
+		free (input->array);
+		exit(EXIT_FAILURE);
+	}
+	return (1);
 }
