@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2026/11/02 15:52:20 by ekausiny         ###   ########.fr       */
+=======
+/*   Updated: 2026/11/02 16:13:11 by ezaimaki         ###   ########.fr       */
+>>>>>>> adc134225aa999dd13923e17b185fc347de8d824
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +98,7 @@ void		rrr(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops);
 void		init_select(t_input *input);
 void		init_env(t_env *env);
 void		init_ops(t_ops *ops);
+void		simple(t_env *env, t_ops *ops);
+
 
 #endif
