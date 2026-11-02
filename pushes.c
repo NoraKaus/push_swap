@@ -6,13 +6,13 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 12:29:58 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/30 17:29:19 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/02 11:03:50 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_int_list **stack1, t_int_list **stack2)
+static void	push(t_int_list **stack1, t_int_list **stack2)
 {
 	t_int_list	*temp;
 
@@ -23,14 +23,18 @@ void	push(t_int_list **stack1, t_int_list **stack2)
 	*stack2 = temp;
 }
 
-void	pa(t_int_list **stack_a, t_int_list **stack_b)
+void	pa(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops)
 {
 	push(stack_a, stack_b);
+	(ops->pa)++;
+	(ops->total)++;
 	write(1, "pa\n", 3);
 }
 
-void	pb(t_int_list **stack_a, t_int_list **stack_b)
+void	pb(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops)
 {
 	push(stack_b, stack_a);
+	(ops->pb)++;
+	(ops->total)++;
 	write(1, "pb\n", 3);
 }
