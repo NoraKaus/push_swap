@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 13:14:52 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/02 15:52:20 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ typedef struct s_env
 	struct s_int_list	*st_b;
 }	t_env;
 
-void		init_select(t_input *select);
 long		atoi_lng(const char *nptr, int *k);
 int			build_arr(char **argv, t_input *input, int i);
 int			error_handling(int argc, char **argv, t_input *input);
@@ -92,5 +91,8 @@ void		rr(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops);
 void		rra(t_int_list **stack, t_ops *ops);
 void		rrb(t_int_list **stack, t_ops *ops);
 void		rrr(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops);
+void		init_select(t_input *input);
+void		init_env(t_env *env);
+void		init_ops(t_ops *ops);
 
 #endif
