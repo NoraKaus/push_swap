@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/01 20:37:45 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/02 09:39:07 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,8 @@ t_int_list	*ft_int_lstnew(int content, int rank);
 t_int_list	*ft_int_lstlast(t_int_list *lst);
 void		ft_int_lstadd_front(t_int_list **lst, t_int_list *new);
 void		ft_int_lstadd_back(t_int_list **lst, t_int_list *new);
+void		ft_int_lstclear(t_int_list **start);
+int			build_stack(int *array, int len, t_int_list **start);
+int			find_rank(int *array, int len, int n);
 
 #endif
