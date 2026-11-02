@@ -99,6 +99,7 @@ void		init_select(t_input *input);
 void		init_env(t_env *env);
 void		init_ops(t_ops *ops);
 void		simple(t_env *env, t_ops *ops);
+void		complex(t_env *env, t_ops *ops);
 
 
 #endif
