@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:56:36 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/03 11:33:52 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/03 16:36:50 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ static void	run_adaptive(t_input *input, t_ops *ops, t_env *env);
 
 void	pick_algo(t_input *input, t_ops *ops, t_env *env)
 {
-	if (input->strategy == SIMPLE)
+	if (input->len < 6)
+		sort(input, env, ops);
+	else if (input->strategy == SIMPLE)
 		simple(env, ops);
 	else if (input->strategy == MEDIUM)
 		k_sort(input, env, ops);
