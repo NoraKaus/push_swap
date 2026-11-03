@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/03 12:47:50 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/03 16:07:04 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include "printf/ft_printf.h"
-# include "printf/libft/libft.h"
+# include "libft/ft_printf.h"
+# include "libft/lib/libft.h"
 
 // give startegies values from 1 to 4
 enum	e_strategy

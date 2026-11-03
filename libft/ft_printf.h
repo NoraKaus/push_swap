@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 20:39:25 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/03 12:46:39 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/03 16:07:35 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 # include <stdarg.h>
 # include <unistd.h>
-# include "libft/libft.h"
+# include "lib/libft.h"
 
 int	ft_printf(int fd, const char *format, ...);
 int	ft_print_output(va_list args, const char *format, int fd);

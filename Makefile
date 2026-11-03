@@ -6,7 +6,7 @@ OBJ = $(SRC:.c=.o)
 
 HDR = push_swap.h
 
-LIB = printf/libftprintf.a
+LIB = libft/libftprintf.a
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -20,15 +20,15 @@ $(NAME): $(OBJ) $(LIB)
 	cc $(CFLAGS) -c $< -o $@
 
 $(LIB):
-	$(MAKE) -C printf
+	$(MAKE) -C libft
 
 clean:
 	rm -f $(OBJ)
-	$(MAKE) -C printf clean
+	$(MAKE) -C libft clean
 
 fclean: clean
 	rm -f $(NAME)
-	$(MAKE) -C printf fclean
+	$(MAKE) -C libft fclean
 
 re: fclean
 	$(MAKE)

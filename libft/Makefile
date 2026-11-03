@@ -6,7 +6,7 @@ OBJ = $(SRC:.c=.o)
 
 HDR = ft_printf.h
 
-LIB = libft/libft.a
+LIB = lib/libft.a
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -20,15 +20,15 @@ $(NAME): $(OBJ) $(LIB)
 	cc $(CFLAGS) -c $< -o $@
 
 $(LIB):
-	$(MAKE) -C libft
+	$(MAKE) -C lib
 
 clean:
 	rm -f $(OBJ)
-	$(MAKE) -C libft clean
+	$(MAKE) -C lib clean
 
 fclean: clean
 	rm -f $(NAME)
-	$(MAKE) -C libft fclean
+	$(MAKE) -C lib fclean
 
 re: fclean
 	$(MAKE)
