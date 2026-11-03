@@ -49,19 +49,30 @@ Four distinct sorting strategies were implemented.
 
 #### Simple
 
-`Selection sort` - run time is O(n²). 
+`Selection sort adaptation` - run time is O(n²).
+_Time complexity - O(n2)_
+_Space complexity - O(1)_
+It operates by comparing values next to each other. It has performance advantages over more complicated algoriths in certain situations, but is inefficient on large lists. 
+
 
 #### Medium 
 
 `K-Distribution sort` - run time is O(n√n).
+_Time complexity - O(n√n)_
+_Space complexity - _
 It operates by iteratively pushing elements from stack A to stack B, using a growing threshold to decide which elements to transfer and how to place them within B. The technique is particularly known for shaping stack B into a "K-like" structure when visualized—hence the name.
 Best suited for n = [50, 500] elements in push_swap projects, though it remains effective and reliable for a broader range from around 10 to 1000 elements.
 
 #### Complex
 
-`Radix sort` 
+`Radix sort` - run time O(n log n).
+_Time complexity - O(nk)_
+_Space complexity - O(n + k)_
+It operates by sorting numbers digit by digit, starting from the least significant digit (rightmost) to the most significant digit (leftmost).
+It groups numbers based on each digit and rearranges them step by step until the lsit is sorted.
+It's most efficient for a large sets of numbersm especially when the numbers have the same number of digits.
 
-## Instructions
+## Instructions 
 ```bash
 make          #compiles the library libft.a
 make clean    # removes the .o files
