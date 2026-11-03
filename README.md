@@ -49,11 +49,10 @@ Four distinct sorting strategies were implemented.
 
 #### Simple
 
-`Selection sort adaptation` - run time is O(n²).
+`Min extraction` - run time is O(n²).
 _Time complexity - O(n2)_
 _Space complexity - O(1)_
-It operates by comparing values next to each other. It has performance advantages over more complicated algoriths in certain situations, but is inefficient on large lists. 
-
+It operates by finding smallest int and moving it to stack b, till stack a is empty, then moving all values back to stack a. It has performance advantages over more complicated algorithms in certain situations, but is inefficient on large lists. 
 
 #### Medium 
 
@@ -68,17 +67,52 @@ Best suited for n = [50, 500] elements in push_swap projects, though it remains 
 `Radix sort` - run time O(n log n).
 _Time complexity - O(nk)_
 _Space complexity - O(n + k)_
-It operates by sorting numbers digit by digit, starting from the least significant digit (rightmost) to the most significant digit (leftmost).
-It groups numbers based on each digit and rearranges them step by step until the lsit is sorted.
-It's most efficient for a large sets of numbersm especially when the numbers have the same number of digits.
+It operates by sorting numbers bit by bit, starting from the least significant bit (rightmost) to the most significant bit(leftmost).
+It groups numbers based on each bit and rearranges them step by step until the list is sorted.
+It's most efficient for a large sets of numbers especially when the numbers have the same number of bits.
 
 ## Instructions 
 ```bash
-make          #compiles the library libft.a
+make          # compiles the push_swap
 make clean    # removes the .o files
-make fclean   # removes the .o files and libft.a
+make fclean   # removes the .o files and push_swap
 make re       # recompiles everything from scratch
+ARG="2 1 0"; ./push_swap $ARG | ./checker_linux $ARG 
+
 ```
+
+## Flags
+
+`--bench`
+`--simple`
+`--medium`
+`--complex`
+`--adaptive`
+
+## Work distribution
+
+We started by discussing the project and outlining the steps we'll need to take to solve it. We've split the project into smaller funtions that will be needed to run it and split them between each other.
+
+ekausiny
+- Error handling
+- Input validation
+- flag processing
+- input conversion to int
+- medium sort
+- short sort
+- picking of alorithms
+
+ezaimaki
+- disorder measure
+- duplicate checker
+- push / swap / rotates build and definition
+- list build and processing
+- simple sort
+- complex sort
+- bench
+
+Throughout the project we've reached out to each other if we needed any help with writing functions, or to further clarify the layout of the project
+
 ## Resources
 [DeepWiki graphs](https://deepwiki.com/tdanielsousa/42School/4.3.5-push_swap-utilities-and-build-system) to visualise the structure of the project
 [K-sort](https://medium.com/@brakebein42/k-distribution-sort-applied-to-the-push-swap-problem-ae2d96d68376) algorithm resources
