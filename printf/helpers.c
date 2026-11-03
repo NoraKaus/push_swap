@@ -6,7 +6,7 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 13:34:37 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/03 11:06:52 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/03 11:47:06 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int	ft_choose(va_list args, char c, int fd)
 				"0123456789ABCDEF"));
 	else if (c == '%')
 		return (write(fd, &c, 1));
+	else if (c == 'f')
+		return (ft_putfl_mod(va_arg(args, double), fd));
 	else
 		return (-1);
 }
