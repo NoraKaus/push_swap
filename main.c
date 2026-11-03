@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:20:49 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/03 12:47:57 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/03 13:01:25 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main(int argc, char **argv)
 	if (err == 0)
 		exit(EXIT_FAILURE);
 	pick_algo(&input, &ops, &env);
+	bench(input.bench, &input, &ops);
 	ft_int_lstclear(&(env.st_a));
 	free (input.array);
 	exit(EXIT_SUCCESS);
@@ -56,6 +57,7 @@ static int	handle_err(int argc, char **argv, t_input *input, t_env *env)
 	input->disorder = calc_disorder(input->array, input->len);
 	if (input->disorder == 0)
 	{
+		bench(input->bench, input, ops);
 		free (input->array);
 		exit(EXIT_SUCCESS);
 	}
