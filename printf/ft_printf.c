@@ -6,13 +6,13 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 13:22:06 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/21 18:43:03 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/03 11:06:03 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_printf(int fd, const char *format, ...)
 {
 	va_list	args;
 	int		total;
@@ -20,12 +20,12 @@ int	ft_printf(const char *format, ...)
 	if (format == 0)
 		return (-1);
 	va_start(args, format);
-	total = ft_print_output(args, format);
+	total = ft_print_output(args, format, fd);
 	va_end(args);
 	return (total);
 }
 
-int	ft_print_output(va_list args, const char *format)
+int	ft_print_output(va_list args, const char *format, int fd)
 {
 	int	i;
 	int	total;
@@ -37,13 +37,13 @@ int	ft_print_output(va_list args, const char *format)
 	{
 		while (format[i] != '%' && format[i] != '\0')
 		{
-			write(1, &format[i], 1);
+			write(fd, &format[i], 1);
 			i++;
 			total++;
 		}
 		if (format[i] == '\0')
 			break ;
-		check = ft_choose(args, format[i + 1]);
+		check = ft_choose(args, format[i + 1], fd);
 		if (check == -1)
 			return (-1);
 		total += check;
