@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   under_five.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 18:14:07 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 18:22:40 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/03 10:32:42 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void push_smallest(t_env *env, t_ops *ops, int size)
 	count = 0;
 	while (size > 3)
 	{
-		count = find_min(env->st_a, i);
+		count = find_pos(env->st_a, i);
 		if (count <= size / 2)
 		{
 			if (count == 1)
