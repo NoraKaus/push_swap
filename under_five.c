@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 18:14:07 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 18:22:40 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/03 10:27:32 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void push_smallest(t_env *env, t_ops *ops, int size)
 			while (env->st_a->rank != i)
 				ra(&(env->st_a), ops);
 		}
-		else 
+		else
 		{
 			while(env->st_a->rank != i)
 				rra(&(env->st_a), ops);
