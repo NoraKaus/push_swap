@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/03 11:23:09 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/03 12:07:59 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_input
 	int		strategy;
 	int		len;
 	int		*array;
-	float	disorder;
+	double	disorder;
 }	t_input;
 
 typedef struct s_ops
@@ -71,7 +71,7 @@ long		atoi_lng(const char *nptr, int *k);
 int			build_arr(char **argv, t_input *input, int i);
 int			error_handling(int argc, char **argv, t_input *input);
 int			check_dup(int *array, int len);
-float		calc_disorder(int *array, int len);
+double	calc_disorder(int *array, int len);
 int			ft_int_lstsize(t_int_list *lst);
 t_int_list	*ft_int_lstnew(int content, int rank);
 t_int_list	*ft_int_lstlast(t_int_list *lst);
