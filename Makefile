@@ -14,21 +14,21 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(LIB)
 	cp $(LIB) $(NAME)
-	cc $(OBJ) $(LIB) -o $(NAME)
+	cc $(CFLAGS) $(OBJ) $(LIB) -o $(NAME)
 
 %.o: %.c $(HDR)
 	cc $(CFLAGS) -c $< -o $@
 
 $(LIB):
-	$(MAKE) -C $(LIB)
+	$(MAKE) -C printf
 
 clean:
 	rm -f $(OBJ)
-	$(MAKE) -C libft clean
+	$(MAKE) -C printf clean
 
 fclean: clean
 	rm -f $(NAME)
-	$(MAKE) -C libft fclean
+	$(MAKE) -C printf fclean
 
 re: fclean
 	$(MAKE)

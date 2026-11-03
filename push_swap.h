@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 17:25:58 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/03 11:23:09 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,10 @@ void		init_select(t_input *input);
 void		init_env(t_env *env);
 void		init_ops(t_ops *ops);
 void		simple(t_env *env, t_ops *ops);
+void		k_sort(t_input *input, t_env *env, t_ops *ops);
 void		complex(t_env *env, t_ops *ops);
+int			sort(t_input *input, t_env *env, t_ops *ops);
+void		pick_algo(t_input *input, t_ops *ops, t_env *env);
 
 
 #endif

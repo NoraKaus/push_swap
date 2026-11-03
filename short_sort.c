@@ -6,19 +6,19 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 18:14:07 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/03 10:42:35 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/03 10:55:30 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void three_sort(t_env *env, t_ops *ops);
+static void	three_sort(t_env *env, t_ops *ops);
 static int	find_pos(t_int_list *list, int i);
-static void push_smallest(t_env *env, t_ops *ops, int size);
+static void	push_smallest(t_env *env, t_ops *ops, int size);
 
 int	sort(t_input *input, t_env *env, t_ops *ops)
 {
-	int size;
+	int	size;
 
 	size = input->len;
 	if (input->len == 2)
@@ -35,22 +35,22 @@ int	sort(t_input *input, t_env *env, t_ops *ops)
 	return (1);
 }
 
-static void three_sort(t_env *env, t_ops *ops)
+static void	three_sort(t_env *env, t_ops *ops)
 {
-	if (env->st_a->rank > env->st_a->next->rank 
+	if (env->st_a->rank > env->st_a->next->rank
 		&& env->st_a->rank > env->st_a->next->next->rank)
 		ra(&(env->st_a), ops);
-	else if (env->st_a->next->rank > env->st_a->next->next->rank 
+	else if (env->st_a->next->rank > env->st_a->next->next->rank
 		&& env->st_a->next->rank > env->st_a->rank)
 		rra(&(env->st_a), ops);
 	if (env->st_a->rank > env->st_a->next->rank)
 		sa(&(env->st_a), ops);
 }
 
-static void push_smallest(t_env *env, t_ops *ops, int size)
-{		
-	int i;
-	int count;
+static void	push_smallest(t_env *env, t_ops *ops, int size)
+{
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -66,11 +66,11 @@ static void push_smallest(t_env *env, t_ops *ops, int size)
 		}
 		else
 		{
-			while(env->st_a->rank != i)
+			while (env->st_a->rank != i)
 				rra(&(env->st_a), ops);
 		}
 		pb(&(env->st_a), &(env->st_b), ops);
-		i++; 
+		i++;
 		size--;
 	}
 }

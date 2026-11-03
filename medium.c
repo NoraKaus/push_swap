@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 12:53:04 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 17:48:21 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/03 11:45:22 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	k_sort(t_input *input, t_env *env, t_ops *ops)
 static void	sort_to_b(t_input *input, t_env *env, t_ops *ops)
 {
 	int	k;
-	int i;
+	int	i;
 
 	i = 0;
 	k = ft_sqrt(196 * input->len) / 10;

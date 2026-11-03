@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:20:49 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 18:12:53 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/03 11:34:45 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,12 @@ int	main(int argc, char **argv)
 	t_input		input;
 	t_ops		ops;
 	t_env		env;
-	t_int_list	*tmp;
 
 	init_structs(&input, &ops, &env);
 	err = handle_err(argc, argv, &input, &env);
 	if (err == 0)
 		exit(EXIT_FAILURE);
-	// implement algorithm depending on flag
-	simple(&env, &ops);
-	// complex(&env, &ops);
-	tmp = env.st_a;
-	while (tmp)
-	{
-		printf("%d ", tmp->content);
-		tmp = tmp->next;
-	}
-	printf("\n%d\n", ops.total);
+	pick_algo(&input, &ops, &env);
 	ft_int_lstclear(&(env.st_a));
 	free (input.array);
 	exit(EXIT_SUCCESS);
