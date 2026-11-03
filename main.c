@@ -6,7 +6,7 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:20:49 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/03 15:55:17 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/03 16:00:32 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,26 @@
 #include <stdio.h>
 
 static void	init_structs(t_input *input, t_ops *ops, t_env *env);
-static void	handle_err(int argc, char **argv, t_input *input, t_env *env);
+static void	handle_err(int argc, char **argv, t_input *input);
 
 int	main(int argc, char **argv)
 {
-	int			err;
 	t_input		input;
 	t_ops		ops;
 	t_env		env;
 
 	init_structs(&input, &ops, &env);
-	handle_err(argc, argv, &input, &env);
-	input->disorder = calc_disorder(input->array, input->len);
-	if (input->disorder == 0)
+	handle_err(argc, argv, &input);
+	input.disorder = calc_disorder(input.array, input.len);
+	if (input.disorder == 0)
 	{
-		bench(input->bench, input, ops);
-		free (input->array);
+		bench(input.bench, &input, &ops);
+		free (input.array);
 		exit(EXIT_SUCCESS);
 	}
-	if (build_stack(input->array, input->len, &(env->st_a)) == 0)
+	if (build_stack(input.array, input.len, &(env.st_a)) == 0)
 	{
-		free (input->array);
+		free (input.array);
 		exit(EXIT_FAILURE);
 	}
 	pick_algo(&input, &ops, &env);
@@ -51,7 +50,7 @@ static void	init_structs(t_input *input, t_ops *ops, t_env *env)
 	init_env(env);
 }
 
-static void	handle_err(int argc, char **argv, t_input *input, t_env *env)
+static void	handle_err(int argc, char **argv, t_input *input)
 {
 	int	err;
 
