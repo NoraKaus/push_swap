@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/03 11:23:09 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/03 12:47:50 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_input
 	int		strategy;
 	int		len;
 	int		*array;
-	float	disorder;
+	double	disorder;
 }	t_input;
 
 typedef struct s_ops
@@ -71,7 +71,7 @@ long		atoi_lng(const char *nptr, int *k);
 int			build_arr(char **argv, t_input *input, int i);
 int			error_handling(int argc, char **argv, t_input *input);
 int			check_dup(int *array, int len);
-float		calc_disorder(int *array, int len);
+double		calc_disorder(int *array, int len);
 int			ft_int_lstsize(t_int_list *lst);
 t_int_list	*ft_int_lstnew(int content, int rank);
 t_int_list	*ft_int_lstlast(t_int_list *lst);
@@ -99,6 +99,6 @@ void		k_sort(t_input *input, t_env *env, t_ops *ops);
 void		complex(t_env *env, t_ops *ops);
 int			sort(t_input *input, t_env *env, t_ops *ops);
 void		pick_algo(t_input *input, t_ops *ops, t_env *env);
-
+void		bench(int is_bench, t_input *input, t_ops *ops);
 
 #endif
