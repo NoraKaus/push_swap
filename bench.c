@@ -6,13 +6,15 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:56:28 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/03 12:43:30 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/03 12:47:35 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void bench(int is_bench, t_input *input, t_ops *ops)
+static void	print_strategy(t_input *input);
+
+void	bench(int is_bench, t_input *input, t_ops *ops)
 {
 	if (is_bench == 0)
 		return ;
@@ -22,10 +24,10 @@ void bench(int is_bench, t_input *input, t_ops *ops)
 	ft_printf(2, "[bench] sa: %i sb: %i ss: %i pa: %i pb: %i\n",
 		ops->sa, ops->sb, ops->ss, ops->pa, ops->pb);
 	ft_printf(2, "[bench] ra: %i rb: %i rr: %i rra: %i rrb: %i rrr: %i\n",
-	ops->ra, ops->rb, ops->rr, ops->rra, ops->rrb, ops->rrr);
+		ops->ra, ops->rb, ops->rr, ops->rra, ops->rrb, ops->rrr);
 }
 
-void print_strategy(t_input *input)
+static void	print_strategy(t_input *input)
 {
 	if (input->strategy == SIMPLE)
 		ft_printf(2, "[bench] strategy: Simple / O(n²)\n");
