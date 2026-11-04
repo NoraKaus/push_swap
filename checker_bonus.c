@@ -6,7 +6,7 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 13:36:54 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/04 14:14:33 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 14:58:14 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	handle_err(int argc, char **argv, t_input *input);
 static void	check_output(t_env *env);
 
-int main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_input		input;
 	t_ops		ops;
@@ -29,7 +29,13 @@ int main (int argc, char **argv)
 		free (input.array);
 		exit(EXIT_FAILURE);
 	}
-	//rest of logic
+	if (read_lines(&env, &ops) == 0)
+	{
+		write(2, "Error\n", 6);
+		free (input->array);
+		exit(EXIT_FAILURE);
+	}
+	check_output(&env);
 	ft_int_lstclear(&(env.st_a));
 	free (input.array);
 	exit(EXIT_SUCCESS);
@@ -52,9 +58,9 @@ static void	handle_err(int argc, char **argv, t_input *input)
 
 static void	check_output(t_env *env)
 {
-	int	i;
-	int	len;
-	t_int_list *current;
+	int			i;
+	int			len;
+	t_int_list	*current;
 
 	i = 0;
 	if (env->st_b != 0)
@@ -77,4 +83,3 @@ static void	check_output(t_env *env)
 	}
 	write(1, "OK\n", 3);
 }
-
