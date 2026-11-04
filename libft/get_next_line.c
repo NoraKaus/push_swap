@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 10:38:04 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/04 12:44:38 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 16:03:26 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int	ft_check_leftover(char **leftover, char **new)
 	char	*sub_leftover;
 	int		position;
 
-	if (*leftover != 0 && ft_strlen(*leftover) != 0)
+	if (*leftover != 0 && ft_strlen_line(*leftover) != 0)
 	{
-		position = ft_find_n(*leftover, ft_strlen(*leftover));
+		position = ft_find_n(*leftover, ft_strlen_line(*leftover));
 		if (position != -1)
 		{
 			ft_split_n(*leftover, position, new, &sub_leftover);
@@ -70,7 +70,7 @@ int	ft_while_no_n(int fd, char *buffer, char **new, char **leftover)
 		buffer[size] = '\0';
 	while (size > 0 && ft_find_n(buffer, size) == -1)
 	{
-		*new = ft_strjoin(*leftover, buffer);
+		*new = ft_strjoin_line(*leftover, buffer);
 		free(*leftover);
 		*leftover = *new;
 		if (*leftover == 0)
@@ -93,8 +93,8 @@ int	ft_end(int size, char *buffer, char **new, char **leftover)
 	}
 	else if (size == 0)
 	{
-		if (*leftover != 0 && ft_strlen(*leftover) != 0)
-			*new = ft_strjoin(*leftover, 0);
+		if (*leftover != 0 && ft_strlen_line(*leftover) != 0)
+			*new = ft_strjoin_line(*leftover, 0);
 		free(*leftover);
 		*leftover = NULL;
 	}
@@ -115,7 +115,7 @@ char	*ft_sep_buffer(char **leftover, char *buffer, int position)
 		*leftover = NULL;
 		return (0);
 	}
-	new = ft_strjoin(*leftover, sub_left);
+	new = ft_strjoin_line(*leftover, sub_left);
 	free(sub_left);
 	free(*leftover);
 	*leftover = 0;

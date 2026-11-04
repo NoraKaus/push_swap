@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 13:36:54 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/04 15:13:03 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 16:06:39 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ int	main(int argc, char **argv)
 	if (read_lines(&env, &ops) == 0)
 	{
 		write(2, "Error\n", 6);
-		free (env.st_a);
-		if (env.ts_b != 0)
-			free (env.st_b);
-		free (input->array);
+		ft_int_lstclear(&(env.st_a));
+		if (env.st_b != 0)
+			ft_int_lstclear(&(env.st_b));
+		free (input.array);
 		exit(EXIT_FAILURE);
 	}
 	check_output(&env);
@@ -68,7 +68,7 @@ static void	check_output(t_env *env)
 	i = 0;
 	if (env->st_b != 0)
 	{
-		ft_int_lstclear(&(env.st_b));
+		ft_int_lstclear(&(env->st_b));
 		write(1, "KO\n", 3);
 		return ;
 	}

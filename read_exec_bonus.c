@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_exec_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 14:17:12 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/04 15:14:17 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 15:56:38 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

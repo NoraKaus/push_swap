@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 12:14:52 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/04 12:44:50 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 16:05:43 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ int	ft_find_n(char	*str, int size)
 //return 0 in failure, 1 in success
 int	ft_split_n(char *to_split, int position, char **left, char **right)
 {
-	*left = ft_substr(to_split, 0, position + 1);
+	*left = ft_substr_line(to_split, 0, position + 1);
 	if (*left == 0)
 	{
 		*right = 0;
 		return (0);
 	}
-	*right = ft_substr(to_split, position + 1, ft_strlen(to_split)
+	*right = ft_substr_line(to_split, position + 1, ft_strlen_line(to_split)
 			- position - 1);
 	if (*right == 0)
 	{
@@ -84,7 +84,7 @@ char	*ft_strjoin_line(char const *s1, char const *s2)
 	int		i;
 	char	*result;
 
-	result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	result = malloc(ft_strlen_line(s1) + ft_strlen_line(s2) + 1);
 	if (result == 0)
 		return (0);
 	i = 0;

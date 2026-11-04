@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   errors_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 13:47:52 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/04 13:49:07 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 15:48:34 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-static int	find_match(char *argv);
 static int	validate(char **argv, int i);
 static int	chk_conv(int argc, char **argv, int i);
 
@@ -52,20 +51,6 @@ static int	chk_conv(int argc, char **argv, int i)
 		total += valid;
 	}
 	return (total);
-}
-
-//matches the strategy selector and adjusts the flag
-static int	find_match(char *argv)
-{
-	if (ft_strncmp(argv, "--simple", 9) == 0)
-		return (SIMPLE);
-	if (ft_strncmp(argv, "--medium", 9) == 0)
-		return (MEDIUM);
-	if (ft_strncmp(argv, "--complex", 10) == 0)
-		return (COMPLEX);
-	if (ft_strncmp(argv, "--adaptive", 11) == 0)
-		return (ADAPTIVE);
-	return (0);
 }
 
 //checks if input is numbers, ' ' and '-' '+' only
