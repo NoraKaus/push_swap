@@ -6,11 +6,11 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 12:14:52 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/04 12:39:54 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 12:44:50 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "ft_printf.h"
 
 // returns position if \n found or -1 if not found
 int	ft_find_n(char	*str, int size)

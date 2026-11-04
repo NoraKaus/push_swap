@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 
-SRC = ft_printf.c helpers.c printings.c ft_putptr.c
+SRC = ft_printf.c helpers.c printings.c ft_putptr.c get_next_line.c get_next_line_utils.c
 
 OBJ = $(SRC:.c=.o)
 

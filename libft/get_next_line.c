@@ -6,11 +6,11 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 10:38:04 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/10/24 11:21:32 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 12:44:38 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "ft_printf.h"
 
 char	*get_next_line(int fd)
 {
