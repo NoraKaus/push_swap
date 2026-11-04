@@ -5,7 +5,7 @@ _This project has been created as part of the 42 curriculum by ezaimaki, ekausin
 ## Description
 
 The goal of this project was to sort a list of integers in ascending order in **stack a**, using only **stack a**, **stack b** and a limited set of operations.
-The program analyses the input, chooses a sorting strategy and prints the sequence of operations that sorts the stack, one per line, using as few operations as possible.
+The program analyses the input, chooses a sorting strategy, depending on the user's input, and prints the sequence of operations that sorts the stack, one per line.
 
 #### Available operations
 
@@ -47,7 +47,7 @@ It is calculated as the ratio of out-of-order pairs to the total number of pairs
 ### Algorithm selection
 
 Four strategies were implemented: three sorting algorithms and an adaptive mode that chooses between them.
-Very small inputs (3 or 5 numbers) are handled by a dedicated short sort that uses a minimal, hard-coded set of moves.
+Very small inputs (up to 5 numbers) are handled by a dedicated short sort that uses a minimal, hard-coded set of moves.
 
 #### Simple
 
