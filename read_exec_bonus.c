@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 14:17:12 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/04 16:38:12 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/04 16:44:48 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,35 +32,6 @@ int	read_lines(t_env *env, t_ops *ops)
 	}
 	return (1);
 }
-
-
-// static int	check_inst(char *str)
-// {
-// 	if (ft_strncmp(str, "sa\n", 3) == 0)
-// 		return (1);
-// 	else if (ft_strncmp(str, "sb\n", 3) == 0)
-// 		return (1);
-// 	else if (ft_strncmp(str, "ss\n", 3) == 0)
-// 		return (1);
-// 	else if (ft_strncmp(str, "pa\n", 3) == 0)
-// 		return (1);
-// 	else if (ft_strncmp(str, "pb\n", 3) == 0)
-// 		return (1);
-// 	else if (ft_strncmp(str, "ra\n", 3) == 0)
-// 		return (1);
-// 	else if (ft_strncmp(str, "rb\n", 3) == 0)
-// 		return (1);
-// 	else if (ft_strncmp(str, "rr\n", 3) == 0)
-// 		return (1);
-// 	else if (ft_strncmp(str, "rra\n", 4) == 0)
-// 		return (1);
-// 	else if (ft_strncmp(str, "rrb\n", 4) == 0)
-// 		return (1);
-// 	else if (ft_strncmp(str, "rrr\n", 4) == 0)
-// 		return (1);
-// 	else
-// 		return (0);
-// }
 
 //returns 0 if instruction doesn't match any of the moves
 static int	check_do_move(t_env *env, t_ops *ops, char *str)
