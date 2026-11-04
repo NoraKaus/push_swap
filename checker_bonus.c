@@ -6,7 +6,7 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 13:36:54 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/04 14:58:14 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 15:13:03 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ int	main(int argc, char **argv)
 	if (read_lines(&env, &ops) == 0)
 	{
 		write(2, "Error\n", 6);
+		free (env.st_a);
+		if (env.ts_b != 0)
+			free (env.st_b);
 		free (input->array);
 		exit(EXIT_FAILURE);
 	}
