@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotates.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 13:21:39 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/02 11:05:51 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 12:35:23 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	rra(t_int_list **stack, t_ops *ops)
 	rev_rotate(stack);
 	(ops->rra)++;
 	(ops->total)++;
-	write(1, "rra\n", 4);
+	if (ops->print)
+		write(1, "rra\n", 4);
 }
 
 void	rrb(t_int_list **stack, t_ops *ops)
@@ -42,7 +43,8 @@ void	rrb(t_int_list **stack, t_ops *ops)
 	rev_rotate(stack);
 	(ops->rrb)++;
 	(ops->total)++;
-	write(1, "rrb\n", 4);
+	if (ops->print)
+		write(1, "rrb\n", 4);
 }
 
 void	rrr(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops)
@@ -51,5 +53,6 @@ void	rrr(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops)
 	rev_rotate(stack_b);
 	(ops->rrr)++;
 	(ops->total)++;
-	write(1, "rrr\n", 4);
+	if (ops->print)
+		write(1, "rrr\n", 4);
 }

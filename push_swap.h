@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/03 16:34:28 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/04 12:20:54 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_ops
 	int	rra;
 	int	rrb;
 	int	rrr;
+	int	print;
 }	t_ops;
 
 typedef struct s_env

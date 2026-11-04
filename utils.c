@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 18:50:06 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/02 13:16:00 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/04 12:24:30 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	init_ops(t_ops *ops)
 	ops->rra = 0;
 	ops->rrb = 0;
 	ops->rrr = 0;
+	ops->print = 1;
 }
 
 //convert string to number (return long for INT_MIN & INT_MAX lengths)

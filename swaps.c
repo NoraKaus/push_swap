@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swaps.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 10:39:56 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/02 11:02:48 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 12:34:30 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	sa(t_int_list **stack, t_ops *ops)
 	swap(stack);
 	(ops->sa)++;
 	(ops->total)++;
-	write(1, "sa\n", 3);
+	if (ops->print)
+		write(1, "sa\n", 3);
 }
 
 void	sb(t_int_list **stack, t_ops *ops)
@@ -37,7 +38,8 @@ void	sb(t_int_list **stack, t_ops *ops)
 	swap(stack);
 	(ops->sb)++;
 	(ops->total)++;
-	write(1, "sb\n", 3);
+	if (ops->print)
+		write(1, "sb\n", 3);
 }
 
 void	ss(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops)
@@ -46,5 +48,6 @@ void	ss(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops)
 	swap(stack_b);
 	(ops->ss)++;
 	(ops->total)++;
-	write(1, "ss\n", 3);
+	if (ops->print)
+		write(1, "ss\n", 3);
 }
