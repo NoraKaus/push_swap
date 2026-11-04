@@ -6,13 +6,14 @@
 /*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 13:36:54 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/04 13:54:11 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 14:14:33 by ezaimaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
 static void	handle_err(int argc, char **argv, t_input *input);
+static void	check_output(t_env *env);
 
 int main (int argc, char **argv)
 {
@@ -47,5 +48,33 @@ static void	handle_err(int argc, char **argv, t_input *input)
 		free (input->array);
 		exit(EXIT_FAILURE);
 	}
+}
+
+static void	check_output(t_env *env)
+{
+	int	i;
+	int	len;
+	t_int_list *current;
+
+	i = 0;
+	if (env->st_b != 0)
+	{
+		ft_int_lstclear(&(env.st_b));
+		write(1, "KO\n", 3);
+		return ;
+	}
+	len = ft_int_lstsize(env->st_a);
+	current = env->st_a;
+	while (i < len)
+	{
+		if (current->rank != i)
+		{
+			write(1, "KO\n", 3);
+			return ;
+		}
+		current = current->next;
+		i++;
+	}
+	write(1, "OK\n", 3);
 }
 
