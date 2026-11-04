@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = $(wildcard *.c)
+SRC = bench.c error_handling.c list_utils.c medium.c rev_rotates.c simple.c utils.c complex.c extract_numbers.c main.c pick_algo.c rotates.c swaps.c dup_error.c pushes.c short_sort.c to_list.c
 
 OBJ = $(SRC:.c=.o)
 

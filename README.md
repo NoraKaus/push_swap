@@ -4,8 +4,8 @@ _This project has been created as part of the 42 curriculum by ezaimaki, ekausin
 
 ## Description
 
-The goal of this project was to sort a list of integers in an ascending order in **stack a** whilst only using **stack a** and **stack b**. 
-Sorting algoriths implemented analyse the input and generate the appropriate sequence of operations. The output of the strategy is the sequence of operations that sorts the stack.
+The goal of this project was to sort a list of integers in ascending order in **stack a**, using only **stack a**, **stack b** and a limited set of operations.
+The program analyses the input, chooses a sorting strategy, depending on the user's input, and prints the sequence of operations that sorts the stack, one per line.
 
 #### Available operations
 
@@ -45,7 +45,8 @@ Disorder was measured with a number between 0 (sorted) and 1 (furthest away from
 
 ### Algorithm selection
 
-Four distinct sorting strategies were implemented.
+Four strategies were implemented: three sorting algorithms and an adaptive mode that chooses between them.
+Very small inputs (up to 5 numbers) are handled by a dedicated short sort that uses a minimal, hard-coded set of moves.
 
 #### Simple
 
