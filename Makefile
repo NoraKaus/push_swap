@@ -4,6 +4,8 @@ SRC = bench.c error_handling.c list_utils.c medium.c rev_rotates.c simple.c util
 
 OBJ = $(SRC:.c=.o)
 
+BONUS = 
+
 HDR = push_swap.h
 
 LIB = libft/libftprintf.a
@@ -21,6 +23,8 @@ $(NAME): $(OBJ) $(LIB)
 
 $(LIB):
 	$(MAKE) -C libft
+
+bonus:
 
 clean:
 	rm -f $(OBJ)

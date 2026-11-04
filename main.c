@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:20:49 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/03 16:00:32 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 15:25:55 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-static void	init_structs(t_input *input, t_ops *ops, t_env *env);
 static void	handle_err(int argc, char **argv, t_input *input);
 
 int	main(int argc, char **argv)
@@ -41,13 +39,6 @@ int	main(int argc, char **argv)
 	ft_int_lstclear(&(env.st_a));
 	free (input.array);
 	exit(EXIT_SUCCESS);
-}
-
-static void	init_structs(t_input *input, t_ops *ops, t_env *env)
-{
-	init_select(input);
-	init_ops(ops);
-	init_env(env);
 }
 
 static void	handle_err(int argc, char **argv, t_input *input)

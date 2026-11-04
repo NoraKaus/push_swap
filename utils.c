@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 18:50:06 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/04 12:24:30 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/04 15:25:17 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,11 @@ long	atoi_lng(const char *nptr, int *k)
 		(*k)++;
 	}
 	return (n * sign);
+}
+
+void	init_structs(t_input *input, t_ops *ops, t_env *env)
+{
+	init_select(input);
+	init_ops(ops);
+	init_env(env);
 }

@@ -6,7 +6,7 @@
 /*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:18:16 by ekausiny          #+#    #+#             */
-/*   Updated: 2026/11/04 12:20:54 by ekausiny         ###   ########.fr       */
+/*   Updated: 2026/11/04 15:25:41 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void		rr(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops);
 void		rra(t_int_list **stack, t_ops *ops);
 void		rrb(t_int_list **stack, t_ops *ops);
 void		rrr(t_int_list **stack_a, t_int_list **stack_b, t_ops *ops);
+void		init_structs(t_input *input, t_ops *ops, t_env *env);
 void		init_select(t_input *input);
 void		init_env(t_env *env);
 void		init_ops(t_ops *ops);
