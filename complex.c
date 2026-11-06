@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   complex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezaimaki <ezaimaki@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: ekausiny <ekausiny@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 15:19:46 by ezaimaki          #+#    #+#             */
-/*   Updated: 2026/11/02 17:11:16 by ezaimaki         ###   ########.fr       */
+/*   Updated: 2026/11/04 17:34:19 by ekausiny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
